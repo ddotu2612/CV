@@ -24,7 +24,7 @@ def histeq(im, nbr_bins=256):
     # use linear interpolation of cdf to find new pixel values
     im2 = interp(im.flatten(), bins[:-1], cdf)
     return im2.reshape(im.shape), cdf
-# im = Image.open('images/cat 2.jpg').convert('L')
+im = Image.open('cat 2.jpg').convert('L')
 # im.show()
 
 # im_hist, cdf = histeq(array(im))
@@ -44,7 +44,6 @@ def compute_average(imlist):
     averageim /= len(imlist)
     # return average as uint8
     return array(averageim, 'uint8')
-
 # Tính PCA
 def pca(X):
     """ Principal Component Analysis
@@ -74,4 +73,4 @@ def pca(X):
         U, S, V = linalg.svd(X)
         V = V[:num_data] # only makes sense to return the first num_data
     # return the projection matrix, the variance and the mean
-    return V,S,mean_X
+    return V, S, mean_X

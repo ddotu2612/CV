@@ -3,11 +3,11 @@ from PIL import Image
 from pylab import *
 pil_img = Image.open('cat 2.jpg')
 
-# # Đọc và convert màu ảnh
-# pil_img = Image.open('images/cat 2.jpg').convert('L') # Convert grayscale color
+# # # Đọc và convert màu ảnh
+# pil_img = Image.open('cat 2.jpg').convert('L') # Convert grayscale color
 
-imshow(pil_img)
-show()
+# imshow(pil_img)
+# show()
 
 # # Convert iamge to another format
 # import os
@@ -34,8 +34,10 @@ show()
 # pil_img.paste(region,box)
 
 # # resize and rotate
-# out = pil_img.resize((128,128))
-# out = pil_img.rotate(45)
+out = pil_img.resize((128,128))
+out.show()
+out = pil_img.rotate(45)
+out.show()
 
 
 
