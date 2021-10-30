@@ -85,7 +85,7 @@ def match(desc1, desc2):
     desc2t = desc2.T # Chuyển vị ma trận
 
     for i in range(desc1_size[0]):
-        dotprods = dot(desc1[i,:],desc2t) # vector of dot products
+        dotprods = dot(desc1[i,:], desc2t) # vector of dot products
         dotprods = 0.9999 * dotprods
         # inverse cosine and sort, return index for features in second image
         indx = argsort(arccos(dotprods)) # Góc càng nhỏ càng gần
@@ -99,8 +99,8 @@ def match(desc1, desc2):
 def match_twosided(desc1, desc2):
     """ Two-sided symmetric version of match(). """
 
-    matches_12 = match(desc1,desc2)
-    matches_21 = match(desc2,desc1)
+    matches_12 = match(desc1, desc2)
+    matches_21 = match(desc2, desc1)
 
     ndx_12 = matches_12.nonzero()[0]
 
