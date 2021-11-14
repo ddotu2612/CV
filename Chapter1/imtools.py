@@ -24,7 +24,7 @@ def histeq(im, nbr_bins=256):
     # use linear interpolation of cdf to find new pixel values
     im2 = interp(im.flatten(), bins[:-1], cdf)
     return im2.reshape(im.shape), cdf
-im = Image.open('cat 2.jpg').convert('L')
+# im = Image.open('cat 2.jpg').convert('L')
 # im.show()
 
 # im_hist, cdf = histeq(array(im))
@@ -44,6 +44,7 @@ def compute_average(imlist):
     averageim /= len(imlist)
     # return average as uint8
     return array(averageim, 'uint8')
+    
 # Tính PCA
 def pca(X):
     """ Principal Component Analysis
@@ -52,20 +53,20 @@ def pca(X):
     """
     # get dimensions
     num_data, dim = X.shape
-    print(num_data, dim)
+    # print(num_data, dim)
     # center data
     mean_X = X.mean(axis=0)
     X = X - mean_X
 
     if dim > num_data:
         # PCA - compact trick used
-        M = dot(X,X.T) # covariance matrix
+        M = dot(X, X.T) # covariance matrix
         e, EV = linalg.eigh(M) # eigenvalues and eigenvectors
         tmp = dot(X.T, EV).T # this is the compact trick
-        V = tmp[::-1] # reverse since last eigenvectors are the ones we want
+        V = tmp[: :-1] # reverse since last eigenvectors are the ones we want
         print('V', V.shape[1])
-        S = sqrt(e)[::-1] # reverse since eigenvalues are in increasing order
-        print('S', S)
+        S = sqrt(e)[: :-1] # reverse since eigenvalues are in increasing order
+  
         for i in range(V.shape[1]):
             V[:, i] /= S
     else:
