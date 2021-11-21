@@ -26,25 +26,25 @@ from pylab import *
 # magnitude = sqrt(imx**2+imy**2)
 
 # # Gaussian derivative filters
-# im = array(Image.open('cat 2.jpg').convert('L'))
-# sigma = 5 #standard deviation
-# imx = zeros(im.shape)
-# filters.gaussian_filter(im, (sigma,sigma), (0,1), imx)
-# imy = zeros(im.shape)
-# filters.gaussian_filter(im, (sigma,sigma), (1,0), imy)
-# magnitude = sqrt(imx**2+imy**2)
-# # show image
-# figure(figsize=(10, 3))
-# gray()
-# subplot(1, 4, 1)
-# imshow(im) # Chuyển lại hình ảnh từ dạng flatten
-# subplot(1, 4, 2)
-# imshow(imx)
-# subplot(1, 4, 3)
-# imshow(imy)
-# subplot(1, 4, 4)
-# imshow(magnitude)
-# show()
+im = array(Image.open('cat 2.jpg').convert('L'))
+sigma = 5 #standard deviation
+imx = zeros(im.shape)
+filters.gaussian_filter(im, (sigma,sigma), (0,1), imx)
+imy = zeros(im.shape)
+filters.gaussian_filter(im, (sigma,sigma), (1,0), imy)
+magnitude = sqrt(imx**2+imy**2)
+# show image
+figure(figsize=(10, 3))
+gray()
+subplot(1, 4, 1)
+imshow(im) # Chuyển lại hình ảnh từ dạng flatten
+subplot(1, 4, 2)
+imshow(imx)
+subplot(1, 4, 3)
+imshow(imy)
+subplot(1, 4, 4)
+imshow(magnitude)
+show()
 
 # 3. Morphology
 # from scipy.ndimage import measurements,morphology
@@ -71,10 +71,10 @@ from pylab import *
 # data['x'] = x
 # scipy.io.savemat('test.mat', data)
 
-import scipy.misc
-im = ones((300, 300))
-# Lưu một mảng thành một image
-scipy.misc.imsave('test.jpg', im)
+# import scipy.misc
+# im = ones((300, 300))
+# # Lưu một mảng thành một image
+# scipy.misc.imsave('test.jpg', im)
 
 # Lấy hình ảnh Lena cho test image, hiện tại đã bị xoá
 # lena1 = scipy.misc.lena()

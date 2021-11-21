@@ -24,31 +24,31 @@ for i in range(7):
 show()
 
 # Sử dụng Pickle để lưu lại các đối tượng cho lần dùng sau
-import pickle 
-f = open('font_pca_modes.pkl', 'wb')
-pickle.dump(immean,f)
-pickle.dump(V,f)
-f.close()
+# import pickle 
+# f = open('font_pca_modes.pkl', 'wb')
+# pickle.dump(immean,f)
+# pickle.dump(V,f)
+# f.close()
 
-# Load 
-f = open('font_pca_modes.pkl', 'wb')
-immean = pickle.load(f)
-V = pickle.load(f)
-f.close()
+# # Load 
+# f = open('font_pca_modes.pkl', 'wb')
+# immean = pickle.load(f)
+# V = pickle.load(f)
+# f.close()
 
 # Thao tác với file không cần đóng file
 # open file and save
-with open('font_pca_modes.pkl', 'wb') as f:
-    pickle.dump(immean,f)
-    pickle.dump(V,f)
-# open file and load
-with open('font_pca_modes.pkl', 'wb') as f:
-    immean = pickle.load(f)
-    V = pickle.load(f)
+# with open('font_pca_modes.pkl', 'wb') as f:
+#     pickle.dump(immean,f)
+#     pickle.dump(V,f)
+# # open file and load
+# with open('font_pca_modes.pkl', 'wb') as f:
+#     immean = pickle.load(f)
+#     V = pickle.load(f)
 
-# Lưu một mảng X trong file txt
-from numpy import savetxt, loadtxt
-x = [1, 2, 3, 4]
-savetxt('test.txt', x, '%i')
-# Load file txt
-x = loadtxt('test.txt')
+# # Lưu một mảng X trong file txt
+# from numpy import savetxt, loadtxt
+# x = [1, 2, 3, 4]
+# savetxt('test.txt', x, '%i')
+# # Load file txt
+# x = loadtxt('test.txt')
