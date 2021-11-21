@@ -51,6 +51,10 @@ transformed_img = cv2.warpPerspective(img1_color,
                     homography, (width, height))
  
 # Save the output.
+<<<<<<< HEAD
 cv2.imwrite('output.jpg', transformed_img)
 
 # print(len(list(filter(lambda x: (x[0] == 1), mask))))
+=======
+cv2.imwrite('output.jpg', transformed_img)
+>>>>>>> a0f228b3e5f25553de95abc448ec8dbd0229fb77

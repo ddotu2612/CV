@@ -1,5 +1,9 @@
 import cv2
+<<<<<<< HEAD
 from sift import  plot_features, process_image, appendimages, plot_matches
+=======
+from sift import read_features_from_file, plot_features, process_image, appendimages, plot_matches
+>>>>>>> a0f228b3e5f25553de95abc448ec8dbd0229fb77
 from numpy import *
 from pylab import *
 from PIL import Image
