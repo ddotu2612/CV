@@ -39,4 +39,4 @@ def denoise(im, U_init, tolerance=0.1, tau=0.125, tv_weight=100):
         # update of error
         error = linalg.norm(U-Uold)/sqrt(n*m)
 
-    return U,im-U # denoised image and texture residual
+    return U, im-U # denoised image and texture residual

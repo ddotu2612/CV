@@ -28,7 +28,7 @@ class BayesClassifier(object):
         """ Classify the points by computing probalities
             for each class and return most probable label. """
         # compute probabilities for each class
-        est_prob = np.array([gauss(m, v, points) for m, v in zip(self.mean,self.var)])
+        est_prob = np.array([gauss(m, v, points) for m, v in zip(self.mean, self.var)])
 
         # get index of highest probability, this gives class label
         ndx = est_prob.argmax(axis=0)
@@ -49,7 +49,7 @@ def gauss(m, v, x):
     S = np.diag(1 / v)
     x = x - m
     # product of probabilities
-    y = np.exp(0.5*np.diag(np.dot(x, np.dot(S, x.T))))
+    y = np.exp(-0.5*np.diag(np.dot(x, np.dot(S, x.T))))
 
     # normalize and return
     return y * (2*np.pi)**(-d/2.0) / (np.sqrt(np.prod(v)) + 1e-6)
